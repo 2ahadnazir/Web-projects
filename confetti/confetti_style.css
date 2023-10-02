@@ -1,0 +1,528 @@
+body {
+  position: relative;
+  margin: 0;
+  min-block-size: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: hsl(261, 67%, 8%);
+  overflow: hidden;
+  perspective: 1000px;
+  --preLoadDuration: 0s;
+  animation: preLoadAnimation 1ms 10s forwards;
+}
+
+@keyframes preLoadAnimation {
+  to {
+    --preLoadDuration: unset;
+  }
+}
+.party {
+  font-size: 2rem;
+  color: hsl(261, 0%, 100%);
+  background-color: hsl(257, 93%, 58%);
+  background-image: radial-gradient(hsl(257, 93%, 58%));
+  background-repeat: no-repeat;
+  background-position: 0 100px;
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 100vw;
+  cursor: pointer;
+  transition: background-position 200ms;
+  transform-style: preserve-3d;
+}
+.party:hover, .party:focus {
+  background-position: 0 35px;
+}
+
+.confetti {
+  position: absolute;
+  inset: 50%;
+  opacity: 1;
+  transform-style: preserve-3d;
+  opacity: 0;
+}
+
+.confetti > span {
+  position: absolute;
+  width: max(var(--confetti-size), 5px);
+  aspect-ratio: 1;
+  border-radius: var(--shape);
+  background: hsl(var(--hue), 100%, 50%);
+}
+.confetti > span:nth-child(1) {
+  --shape: -29.6247814091vw;
+  --hue: 29;
+  --confetti-size: 16px;
+  --offsetY: -10.5vh;
+  --offsetX: 14vw;
+  --offsetZ: -156px;
+  --spin: 9turn;
+}
+.confetti > span:nth-child(2) {
+  --shape: 46.1384076907vw;
+  --hue: 108;
+  --confetti-size: 5px;
+  --offsetY: -9.5vh;
+  --offsetX: 26vw;
+  --offsetZ: 66px;
+  --spin: 7turn;
+}
+.confetti > span:nth-child(3) {
+  --shape: 29.9206535434vw;
+  --hue: 91;
+  --confetti-size: 17px;
+  --offsetY: -8.5vh;
+  --offsetX: -38vw;
+  --offsetZ: 98px;
+  --spin: 6turn;
+}
+.confetti > span:nth-child(4) {
+  --shape: 18.7001787349vw;
+  --hue: -162;
+  --confetti-size: 3px;
+  --offsetY: -9.5vh;
+  --offsetX: 19vw;
+  --offsetZ: 25px;
+  --spin: 10turn;
+}
+.confetti > span:nth-child(5) {
+  --shape: 16.6555352426vw;
+  --hue: 24;
+  --confetti-size: 19px;
+  --offsetY: 6.5vh;
+  --offsetX: 39vw;
+  --offsetZ: 138px;
+  --spin: 10turn;
+}
+.confetti > span:nth-child(6) {
+  --shape: -47.8342170121vw;
+  --hue: -161;
+  --confetti-size: 6px;
+  --offsetY: 16.5vh;
+  --offsetX: 5vw;
+  --offsetZ: -54px;
+  --spin: 2turn;
+}
+.confetti > span:nth-child(7) {
+  --shape: -10.9319513538vw;
+  --hue: 179;
+  --confetti-size: 15px;
+  --offsetY: -2.5vh;
+  --offsetX: 28vw;
+  --offsetZ: 53px;
+  --spin: 7turn;
+}
+.confetti > span:nth-child(8) {
+  --shape: 30.4968732811vw;
+  --hue: 31;
+  --confetti-size: 15px;
+  --offsetY: -6.5vh;
+  --offsetX: -8vw;
+  --offsetZ: 69px;
+  --spin: 7turn;
+}
+.confetti > span:nth-child(9) {
+  --shape: -40.3158539122vw;
+  --hue: 135;
+  --confetti-size: 6px;
+  --offsetY: -7.5vh;
+  --offsetX: -19vw;
+  --offsetZ: 141px;
+  --spin: 1turn;
+}
+.confetti > span:nth-child(10) {
+  --shape: -30.8250490535vw;
+  --hue: 100;
+  --confetti-size: 18px;
+  --offsetY: -1.5vh;
+  --offsetX: -24vw;
+  --offsetZ: -236px;
+  --spin: 9turn;
+}
+.confetti > span:nth-child(11) {
+  --shape: -26.8667116779vw;
+  --hue: 169;
+  --confetti-size: 9px;
+  --offsetY: 12.5vh;
+  --offsetX: 36vw;
+  --offsetZ: -49px;
+  --spin: 10turn;
+}
+.confetti > span:nth-child(12) {
+  --shape: 25.5786567095vw;
+  --hue: 26;
+  --confetti-size: 17px;
+  --offsetY: -5.5vh;
+  --offsetX: -40vw;
+  --offsetZ: -209px;
+  --spin: 2turn;
+}
+.confetti > span:nth-child(13) {
+  --shape: -18.173963706vw;
+  --hue: -6;
+  --confetti-size: 16px;
+  --offsetY: -17.5vh;
+  --offsetX: -34vw;
+  --offsetZ: -234px;
+  --spin: 6turn;
+}
+.confetti > span:nth-child(14) {
+  --shape: -5.6538349968vw;
+  --hue: -27;
+  --confetti-size: 1px;
+  --offsetY: 10.5vh;
+  --offsetX: -31vw;
+  --offsetZ: -40px;
+  --spin: 6turn;
+}
+.confetti > span:nth-child(15) {
+  --shape: 20.7913103799vw;
+  --hue: 98;
+  --confetti-size: 15px;
+  --offsetY: 8.5vh;
+  --offsetX: -34vw;
+  --offsetZ: -155px;
+  --spin: 1turn;
+}
+.confetti > span:nth-child(16) {
+  --shape: -17.7893928141vw;
+  --hue: 73;
+  --confetti-size: 16px;
+  --offsetY: -11.5vh;
+  --offsetX: -2vw;
+  --offsetZ: -147px;
+  --spin: 3turn;
+}
+.confetti > span:nth-child(17) {
+  --shape: -8.5610849231vw;
+  --hue: 157;
+  --confetti-size: 1px;
+  --offsetY: -11.5vh;
+  --offsetX: 6vw;
+  --offsetZ: 209px;
+  --spin: 7turn;
+}
+.confetti > span:nth-child(18) {
+  --shape: 44.4598669096vw;
+  --hue: 90;
+  --confetti-size: 17px;
+  --offsetY: -8.5vh;
+  --offsetX: 18vw;
+  --offsetZ: 66px;
+  --spin: 1turn;
+}
+.confetti > span:nth-child(19) {
+  --shape: 41.4036800441vw;
+  --hue: -11;
+  --confetti-size: 19px;
+  --offsetY: 8.5vh;
+  --offsetX: -2vw;
+  --offsetZ: -199px;
+  --spin: 2turn;
+}
+.confetti > span:nth-child(20) {
+  --shape: 24.8473430736vw;
+  --hue: 155;
+  --confetti-size: 5px;
+  --offsetY: 15.5vh;
+  --offsetX: 10vw;
+  --offsetZ: -64px;
+  --spin: 10turn;
+}
+.confetti > span:nth-child(21) {
+  --shape: 14.9273902813vw;
+  --hue: 109;
+  --confetti-size: 11px;
+  --offsetY: -10.5vh;
+  --offsetX: -34vw;
+  --offsetZ: -204px;
+  --spin: 10turn;
+}
+.confetti > span:nth-child(22) {
+  --shape: -17.5415809931vw;
+  --hue: -157;
+  --confetti-size: 2px;
+  --offsetY: 3.5vh;
+  --offsetX: -34vw;
+  --offsetZ: 82px;
+  --spin: 2turn;
+}
+.confetti > span:nth-child(23) {
+  --shape: -4.0256243167vw;
+  --hue: -92;
+  --confetti-size: 14px;
+  --offsetY: -15.5vh;
+  --offsetX: 12vw;
+  --offsetZ: 100px;
+  --spin: 3turn;
+}
+.confetti > span:nth-child(24) {
+  --shape: 43.1841326749vw;
+  --hue: -49;
+  --confetti-size: 11px;
+  --offsetY: 1.5vh;
+  --offsetX: 25vw;
+  --offsetZ: -234px;
+  --spin: 3turn;
+}
+.confetti > span:nth-child(25) {
+  --shape: -11.8943262353vw;
+  --hue: 131;
+  --confetti-size: 16px;
+  --offsetY: 15.5vh;
+  --offsetX: -25vw;
+  --offsetZ: -231px;
+  --spin: 5turn;
+}
+.confetti > span:nth-child(26) {
+  --shape: 32.1050931174vw;
+  --hue: -70;
+  --confetti-size: 1px;
+  --offsetY: 0.5vh;
+  --offsetX: -29vw;
+  --offsetZ: -142px;
+  --spin: 8turn;
+}
+.confetti > span:nth-child(27) {
+  --shape: 27.444154136vw;
+  --hue: 66;
+  --confetti-size: 15px;
+  --offsetY: -5.5vh;
+  --offsetX: -40vw;
+  --offsetZ: 60px;
+  --spin: 1turn;
+}
+.confetti > span:nth-child(28) {
+  --shape: 28.6867572272vw;
+  --hue: 74;
+  --confetti-size: 8px;
+  --offsetY: 15.5vh;
+  --offsetX: -37vw;
+  --offsetZ: -114px;
+  --spin: 9turn;
+}
+.confetti > span:nth-child(29) {
+  --shape: 38.9435624335vw;
+  --hue: -143;
+  --confetti-size: 6px;
+  --offsetY: -1.5vh;
+  --offsetX: 13vw;
+  --offsetZ: 232px;
+  --spin: 8turn;
+}
+.confetti > span:nth-child(30) {
+  --shape: 22.8039647654vw;
+  --hue: -130;
+  --confetti-size: 10px;
+  --offsetY: -1.5vh;
+  --offsetX: -38vw;
+  --offsetZ: -117px;
+  --spin: 1turn;
+}
+.confetti > span:nth-child(31) {
+  --shape: -38.5195881701vw;
+  --hue: -127;
+  --confetti-size: 7px;
+  --offsetY: -16.5vh;
+  --offsetX: 31vw;
+  --offsetZ: 98px;
+  --spin: 7turn;
+}
+.confetti > span:nth-child(32) {
+  --shape: -45.1554240717vw;
+  --hue: -165;
+  --confetti-size: 12px;
+  --offsetY: 11.5vh;
+  --offsetX: 10vw;
+  --offsetZ: 17px;
+  --spin: 2turn;
+}
+.confetti > span:nth-child(33) {
+  --shape: 37.1630861238vw;
+  --hue: -131;
+  --confetti-size: 10px;
+  --offsetY: 13.5vh;
+  --offsetX: -8vw;
+  --offsetZ: -9px;
+  --spin: 3turn;
+}
+.confetti > span:nth-child(34) {
+  --shape: 6.583536802vw;
+  --hue: 29;
+  --confetti-size: 18px;
+  --offsetY: 5.5vh;
+  --offsetX: -21vw;
+  --offsetZ: -150px;
+  --spin: 10turn;
+}
+.confetti > span:nth-child(35) {
+  --shape: 37.5653660464vw;
+  --hue: -75;
+  --confetti-size: 5px;
+  --offsetY: -16.5vh;
+  --offsetX: -4vw;
+  --offsetZ: -137px;
+  --spin: 8turn;
+}
+.confetti > span:nth-child(36) {
+  --shape: 29.494194521vw;
+  --hue: 33;
+  --confetti-size: 2px;
+  --offsetY: -7.5vh;
+  --offsetX: 34vw;
+  --offsetZ: 72px;
+  --spin: 8turn;
+}
+.confetti > span:nth-child(37) {
+  --shape: -20.1258364635vw;
+  --hue: 6;
+  --confetti-size: 5px;
+  --offsetY: -17.5vh;
+  --offsetX: -35vw;
+  --offsetZ: 210px;
+  --spin: 2turn;
+}
+.confetti > span:nth-child(38) {
+  --shape: -46.5833911401vw;
+  --hue: -3;
+  --confetti-size: 15px;
+  --offsetY: -11.5vh;
+  --offsetX: 33vw;
+  --offsetZ: -100px;
+  --spin: 4turn;
+}
+.confetti > span:nth-child(39) {
+  --shape: -6.2026375366vw;
+  --hue: -61;
+  --confetti-size: 12px;
+  --offsetY: -12.5vh;
+  --offsetX: 7vw;
+  --offsetZ: -55px;
+  --spin: 6turn;
+}
+.confetti > span:nth-child(40) {
+  --shape: -49.8869417433vw;
+  --hue: -154;
+  --confetti-size: 3px;
+  --offsetY: -12.5vh;
+  --offsetX: 13vw;
+  --offsetZ: 68px;
+  --spin: 5turn;
+}
+.confetti > span:nth-child(41) {
+  --shape: 28.3913666359vw;
+  --hue: 128;
+  --confetti-size: 19px;
+  --offsetY: -0.5vh;
+  --offsetX: 11vw;
+  --offsetZ: 13px;
+  --spin: 1turn;
+}
+.confetti > span:nth-child(42) {
+  --shape: 10.3969076592vw;
+  --hue: -70;
+  --confetti-size: 18px;
+  --offsetY: 9.5vh;
+  --offsetX: 13vw;
+  --offsetZ: -210px;
+  --spin: 7turn;
+}
+.confetti > span:nth-child(43) {
+  --shape: -16.538240073vw;
+  --hue: 28;
+  --confetti-size: 4px;
+  --offsetY: -10.5vh;
+  --offsetX: 12vw;
+  --offsetZ: 31px;
+  --spin: 3turn;
+}
+.confetti > span:nth-child(44) {
+  --shape: -37.0341465363vw;
+  --hue: 150;
+  --confetti-size: 12px;
+  --offsetY: -0.5vh;
+  --offsetX: 4vw;
+  --offsetZ: 3px;
+  --spin: 8turn;
+}
+.confetti > span:nth-child(45) {
+  --shape: -3.9406729736vw;
+  --hue: 127;
+  --confetti-size: 20px;
+  --offsetY: 10.5vh;
+  --offsetX: -36vw;
+  --offsetZ: -29px;
+  --spin: 4turn;
+}
+.confetti > span:nth-child(46) {
+  --shape: -13.5842332597vw;
+  --hue: 157;
+  --confetti-size: 12px;
+  --offsetY: 7.5vh;
+  --offsetX: -11vw;
+  --offsetZ: -32px;
+  --spin: 3turn;
+}
+.confetti > span:nth-child(47) {
+  --shape: 46.5399725867vw;
+  --hue: 145;
+  --confetti-size: 11px;
+  --offsetY: 7.5vh;
+  --offsetX: -7vw;
+  --offsetZ: -242px;
+  --spin: 8turn;
+}
+.confetti > span:nth-child(48) {
+  --shape: 16.1135622147vw;
+  --hue: -15;
+  --confetti-size: 20px;
+  --offsetY: -11.5vh;
+  --offsetX: 24vw;
+  --offsetZ: -87px;
+  --spin: 6turn;
+}
+.confetti > span:nth-child(49) {
+  --shape: 22.8715518324vw;
+  --hue: -131;
+  --confetti-size: 6px;
+  --offsetY: 0.5vh;
+  --offsetX: -4vw;
+  --offsetZ: -6px;
+  --spin: 3turn;
+}
+.confetti > span:nth-child(50) {
+  --shape: -28.9972602803vw;
+  --hue: 93;
+  --confetti-size: 5px;
+  --offsetY: -15.5vh;
+  --offsetX: 27vw;
+  --offsetZ: -99px;
+  --spin: 4turn;
+}
+
+.explosion {
+  animation: confettiSettle 10s;
+}
+
+.explosion > span {
+  animation: confettiSpread 10s cubic-bezier(0, 0.75, 1, 1);
+}
+
+@keyframes confettiSpread {
+  25% {
+    translate: 0 -45vh;
+  }
+  100% {
+    translate: 0 -45vh;
+    transform: translateY(var(--offsetY)) translateX(var(--offsetX)) translateZ(var(--offsetZ)) rotateX(var(--spin));
+  }
+}
+@keyframes confettiSettle {
+  0%, 70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(75vh);
+  }
+}/*# sourceMappingURL=confetti_style.css.map */
